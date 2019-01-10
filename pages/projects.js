@@ -1,65 +1,69 @@
 import React from 'react'
 import Nav from '../components/Nav'
 import Project from '../components/Project'
-import { projectData } from '../data.js'
+import GlobalWrapper from '../components/GlobalHeader.js'
+import { projectData, uniqueTags } from '../data.js'
 
 class Projects extends React.Component {
   state = {
-    filter: '',
+    filter: 'all',
   }
+
   renderProjectList = () => {
     return projectData
       .filter(item => {
-        if (this.state.filter == '') {
+        if (this.state.filter == 'all') {
           return item
         } else {
           return item.tags.includes(this.state.filter)
         }
       })
-      .map(({ imageSource, caption, description, tags }) => {
+      .map(item => {
         return (
-          <Project
-            imageSource={imageSource}
-            caption={caption}
-            description={description}
-            key={caption}
-            tags={tags}
-          />
+          <Project {...item} key={item.caption} />
           //I miss punning from Reason ^^
         )
       })
   }
 
+  renderTagPickerButtonList = () => {
+    return uniqueTags.map(button => {
+      return (
+        <button
+          onClick={() => this.setState({ filter: button })}
+          className="tagPickerListItem"
+          key={button}
+          style={
+            this.state.filter === button
+              ? { backgroundColor: '#0000B5', color: 'white' }
+              : {}
+          }
+          role="button"
+        >
+          {button}
+        </button>
+      )
+    })
+  }
+
   render() {
     return (
       <>
-        <Nav />
-        <main role="main">
-          <section className="tagPickerContainer">
-            <article>My favorite technologies:</article>
-            <div className="tagPickerList">
-              <button
-                onClick={() => this.setState({ filter: 'react' })}
-                className="tagPickerListItem"
-              >
-                React
-              </button>
-              <button
-                onClick={() => this.setState({ filter: 'next' })}
-                className="tagPickerListItem"
-              >
-                NextJS
-              </button>
-              <button
-                onClick={() => this.setState({ filter: 'graphql' })}
-                className="tagPickerListItem"
-              >
-                Graphql
-              </button>
-            </div>
-          </section>
-          <section className="projectList">{this.renderProjectList()}</section>
-        </main>
+        <GlobalWrapper>
+          <Nav />
+          <main role="main" lang="en">
+            <section className="tagPickerContainer">
+              <h1>Click to sort by technology:</h1>
+              <div className="tagPickerList">
+                {this.renderTagPickerButtonList()}
+              </div>
+            </section>
+            <section className="projectList">
+              {this.renderProjectList()}
+            </section>
+          </main>
+        </GlobalWrapper>
+
         <style jsx="true">{`
           main {
             display: flex;
@@ -75,11 +79,17 @@ class Projects extends React.Component {
             display: flex;
             justify-content: center;
             margin-top: 1rem;
+            flex-wrap: wrap;
           }
           .tagPickerListItem {
-            margin: 0 1rem;
-            padding: 0.5rem 1rem;
+            width: 6rem;
+            margin: 0.5rem 0.5rem;
+            padding: 0.5rem 0.5rem;
+            cursor: pointer;
           }
+          .tagPickerListItem:visited {
+          }
+
           .projectList {
             display: flex;
             flex-wrap: wrap;
