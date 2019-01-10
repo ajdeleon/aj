@@ -1,14 +1,45 @@
 export const projectData = [
   {
-    imageSource: 'https://via.placeholder.com/50.png',
-    caption: 'Project 1',
-    description: 'This is a project I put together as part of #100DaysOfCode',
-    tags: ['react', 'redux'],
+    url: 'https://showcasephilly.com',
+    codeUrl: 'https://github.com/ajdeleon/Free-Code-Camp-Philly-Showcase',
+    imageSource: 'https://via.placeholder.com/200.png',
+    caption: 'Freecodecamp Philly Member Showcase',
+    description:
+      'This is an open source project to which I contribute. I help organize a Freecodecamp meetup and one of the projects that has come out of that meetup is this website that serves to showcase all of the great web dev projects people are working on. ',
+    tags: ['react', 'semantic-ui'],
   },
   {
-    imageSource: 'https://via.placeholder.com/50.png',
-    caption: 'Project 2',
-    description: 'Another one that I made for something else',
-    tags: ['react', 'nextjs', 'graphql'],
+    url: 'http://phitcalendar.com',
+    codeUrl: 'https://github.com/ajdeleon/phit_calendar',
+    imageSource: 'https://via.placeholder.com/150.png',
+    caption: 'Accessible Phit Calendar',
+    description:
+      'The calendar for the theater where I do Improv comedy is notoriously inaccessible and complete unresponsive for mobile. This project uses a node server to collect and parse html data, and then a React frontend renders it in a much more readable way.',
+    tags: ['react', 'nodejs', 'docker', 'nginx', 'cloud hosting', 'tachyons'],
+  },
+  {
+    url: 'https://github.com/ajdeleon/gzclp',
+    codeUrl: 'https://github.com/ajdeleon/gzclp',
+    imageSource: 'https://via.placeholder.com/200.png',
+    caption: 'gzclp',
+    description:
+      'This is a full stack project to keep track of the somewhat popular workout method gzclp. I chose to user docker-compose because it makes it so easy to orchestrate multiple services',
+    tags: ['react', 'postgresql', 'nodejs', 'docker', 'tachyons'],
+  },
+  {
+    url: 'https://amexcomedy.com',
+    codeUrl: 'https://github.com/ajdeleon/amex_site',
+    imageSource: 'https://via.placeholder.com/200.png',
+    caption: 'NYTE Shift Comedy Website',
+    description:
+      'This is the website for my improv team NYTE Shift. We very recently had to change our name due to a cease and desist letter and this site will soon be updated to reflect the changes. This was hosted using Netlify.',
+    tags: ['react', 'cloud hosting'],
   },
 ]
+
+const allTags = projectData.reduce((acc, cur) => {
+  return [...acc, ...cur.tags]
+}, [])
+
+export const uniqueTags = ['all', ...new Set(allTags)]
+// ...new Set will return only unique values from array. Easier than a .filter
