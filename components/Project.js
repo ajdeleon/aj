@@ -1,36 +1,87 @@
-export default ({ imageSource, caption, description }) => (
-  <article>
-    <figure>
-      <img src={imageSource} />
-      <figcaption>{caption}</figcaption>
-    </figure>
-    <p>{description}</p>
-    <div className="tags">
-      <div className="tagItem">React</div>
-      <div className="tagItem">NextJS</div>
-      <div className="tagItem">Another one</div>
+export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
+  <article role="article">
+    <div className="projectInfo">
+      <h2>{caption}</h2>
+      <figure>
+        <img src={imageSource} />
+        <figcaption>{url}</figcaption>
+      </figure>
+      <p>{description}</p>
+      <h3>Technologies</h3>
+      <ul className="tags" role="list">
+        {tags.map(tag => {
+          return (
+            <li className="tagItem" key={tag} role="listitem">
+              {tag}
+            </li>
+          )
+        })}
+      </ul>
+    </div>
+    <div className="externalLinks">
+      <a className="projectLink" href={url}>
+        Live project link
+      </a>
+      <a className="codeLink" href={codeUrl}>
+        Check out the code here
+      </a>
     </div>
     <style jsx>{`
       article {
-        display: flex-column;
-        align-content: center;
-        width: 16rem;
-        outline: 1px solid black;
+        outline: 1px solid;
+        width: 15rem;
         margin: 1rem;
         padding: 1rem;
+      }
+
+      h2 {
+        text-align: center;
       }
 
       figure {
         text-align: center;
       }
 
+      figcaption {
+        font-size: 0.8rem;
+      }
+
+      img {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .tags {
-        display: flex;
-        justify-content: center;
       }
 
       .tagItem {
-        margin: 0.5rem;
+      }
+
+      .projectInfo {
+      }
+
+      .externalLinks {
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: #0000b5;
+      }
+
+      a:visited {
+        color: #802200;
+      }
+
+      a:hover {
+        color: #aa5d00;
+      }
+
+      .projectLink {
+      }
+
+      .codeLink {
       }
     `}</style>
   </article>

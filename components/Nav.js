@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default () => (
   <nav role="navigation">
-    <div>Placeholder</div>
+    <a href="/">AJ.com</a>
     <div className="links">
       <ul>
         <li>
@@ -17,10 +17,16 @@ export default () => (
         </li>
       </ul>
     </div>
-    <style jsx="true">{`
+    <style jsx>{`
       nav {
         width: 100%;
         display: flex;
+      }
+
+      a {
+        display: flex;
+        align-self: center;
+        margin-left: 1rem;
       }
 
       ul {
@@ -37,5 +43,34 @@ export default () => (
         margin-left: auto;
       }
     `}</style>
+    <style global jsx>{`
+      body {
+        font-family: arial;
+      }
+      @media only screen and (max-width: 500px) {
+        html {
+          font-size: 18px;
+        }
+      }
+      @media only screen and (min-width: 500px) {
+        html {
+          font-family: arial;
+          font-size: 24px;
+        }
+      }
+
+      a {
+        color: #0000b5;
+      }
+
+      a:visited {
+        color: #802200;
+      }
+
+      a:hover {
+        color: #aa5d00;
+      }
+    `}</style>
+    {/*Putting global styles here since this will be imported to every component*/}
   </nav>
 )
