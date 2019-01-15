@@ -1,8 +1,8 @@
 export const projectData = [
   {
-    url: 'https://showcasephilly.com',
+    url: 'https/showcasephilly.com',
     codeUrl: 'https://github.com/ajdeleon/Free-Code-Camp-Philly-Showcase',
-    imageSource: 'https://via.placeholder.com/200.png',
+    imageSource: '/static/showcase.png',
     caption: 'Freecodecamp Philly Member Showcase',
     description:
       'This is an open source project to which I contribute. I help organize a Freecodecamp meetup and one of the projects that has come out of that meetup is this website that serves to showcase all of the great web dev projects people are working on. ',
@@ -11,7 +11,7 @@ export const projectData = [
   {
     url: 'http://phitcalendar.com',
     codeUrl: 'https://github.com/ajdeleon/phit_calendar',
-    imageSource: 'https://via.placeholder.com/150.png',
+    imageSource: '/static/phitcalendar.png',
     caption: 'Accessible Phit Calendar',
     description:
       'The calendar for the theater where I do Improv comedy is notoriously inaccessible and complete unresponsive for mobile. This project uses a node server to collect and parse html data, and then a React frontend renders it in a much more readable way.',
@@ -29,7 +29,7 @@ export const projectData = [
   {
     url: 'https://amexcomedy.com',
     codeUrl: 'https://github.com/ajdeleon/amex_site',
-    imageSource: 'https://via.placeholder.com/200.png',
+    imageSource: '/static/amex.png',
     caption: 'NYTE Shift Comedy Website',
     description:
       'This is the website for my improv team NYTE Shift. We very recently had to change our name due to a cease and desist letter and this site will soon be updated to reflect the changes. This was hosted using Netlify.',
