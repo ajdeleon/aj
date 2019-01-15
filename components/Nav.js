@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default () => (
   <nav role="navigation">
-    <a href="/">AJ.com</a>
+    <a href="/">ajdeleon.tech</a>
     <div className="links">
       <ul>
         <li>
