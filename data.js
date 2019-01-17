@@ -1,6 +1,6 @@
 export const projectData = [
   {
-    url: 'https/showcasephilly.com',
+    url: 'https://www.showcasephilly.com',
     codeUrl: 'https://github.com/ajdeleon/Free-Code-Camp-Philly-Showcase',
     imageSource: '/static/showcase.png',
     caption: 'Freecodecamp Philly Member Showcase',
@@ -20,7 +20,7 @@ export const projectData = [
   {
     url: 'https://github.com/ajdeleon/gzclp',
     codeUrl: 'https://github.com/ajdeleon/gzclp',
-    imageSource: 'https://via.placeholder.com/200.png',
+    imageSource: 'https://via.placeholder.com/200x250.png',
     caption: 'gzclp',
     description:
       'This is a full stack project to keep track of the somewhat popular workout method gzclp. I chose to user docker-compose because it makes it so easy to orchestrate multiple services',

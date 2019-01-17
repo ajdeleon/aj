@@ -1,8 +1,12 @@
+import GithubLogo from './GithubLogo'
+import LinkLogo from './LinkLogo'
 export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
   <article role="article">
     <figure>
       <img src={imageSource} />
-      <figcaption>{url}</figcaption>
+      <figcaption>
+        <a href={url}>{url}</a>
+      </figcaption>
     </figure>
     <div className="projectInfo">
       <h2>{caption}</h2>
@@ -17,10 +21,16 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
           )
         })}
       </ul>
-      <div className="externalLinks">
+    </div>
+    <div className="externalLinks">
+      <div>
+        <LinkLogo />{' '}
         <a className="projectLink" href={url}>
           Live project link
         </a>
+      </div>
+      <div>
+        <GithubLogo />{' '}
         <a className="codeLink" href={codeUrl}>
           Check out the code here
         </a>
@@ -28,9 +38,11 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
     </div>
     <style jsx>{`
       article {
-        outline: 1px solid;
-        max-width: 18rem;
+        outline: 1px solid #595959;
+        max-width: 20rem;
         margin: 1rem;
+        display: flex;
+        flex-direction: column;
       }
 
       figure {
@@ -47,25 +59,37 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 1px;
+        border-bottom: 1px solid #595959;
       }
 
       .tags {
+        color: #595959;
       }
 
       .tagItem {
       }
 
       .projectInfo {
-        padding: 0 1rem;
+        padding: 0 1rem 0rem 1rem;
+        margin-bottom: auto;
       }
 
       h2 {
         margin-top: 0.5rem;
       }
+      p {
+        color: #595959;
+      }
 
       .externalLinks {
         display: flex;
         flex-direction: column;
+      }
+
+      .externalLinks div {
+        padding: 0.5rem;
+        border-top: 1px solid #595959;
       }
 
       a {

@@ -26,24 +26,25 @@ class Projects extends React.Component {
       })
   }
 
-  renderTagPickerButtonList = () => {
-    return uniqueTags.map(button => {
-      return (
-        <button
-          onClick={() => this.setState({ filter: button })}
-          className="tagPickerListItem"
-          key={button}
-          style={
-            this.state.filter === button
-              ? { backgroundColor: '#0000B5', color: 'white' }
-              : {}
-          }
-          role="button"
+  renderTagPickerDropdown = () => {
+    return (
+      <>
+        <label htmlFor="tagPicker">Filter by technology: </label>
+        <select
+          id="tagPicker"
+          className="tagPickerSelect"
+          onChange={event => this.setState({ filter: event.target.value })}
         >
-          {button}
-        </button>
-      )
-    })
+          {uniqueTags.map(tag => {
+            return (
+              <option className="tagPickerListItem" key={tag} role="button">
+                {tag}
+              </option>
+            )
+          })}
+        </select>
+      </>
+    )
   }
 
   render() {
@@ -52,10 +53,10 @@ class Projects extends React.Component {
         <GlobalWrapper>
           <Nav />
           <main role="main" lang="en">
+            <h1>Projects</h1>
             <section className="tagPickerContainer">
-              <h1>Click to sort by technology:</h1>
               <div className="tagPickerList">
-                {this.renderTagPickerButtonList()}
+                {this.renderTagPickerDropdown()}
               </div>
             </section>
             <section className="projectList">
@@ -71,29 +72,22 @@ class Projects extends React.Component {
             align-items: center;
           }
           .tagPickerContainer {
-            width: 80%;
             text-align: center;
-            padding: 1rem;
           }
-          .tagPickerList {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-            flex-wrap: wrap;
+          .tagPickerSelect {
+            height: 1.5rem;
+            font-size: 1rem;
           }
           .tagPickerListItem {
-            width: 6rem;
-            margin: 0.5rem 0.5rem;
-            padding: 0.5rem 0.5rem;
-            cursor: pointer;
           }
-          .tagPickerListItem:visited {
-          }
-
           .projectList {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+          }
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
           }
         `}</style>
       </>
