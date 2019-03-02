@@ -35,6 +35,15 @@ export const projectData = [
       'This is the website for my improv team NYTE Shift. We very recently had to change our name due to a cease and desist letter and this site will soon be updated to reflect the changes. This was hosted using Netlify.',
     tags: ['react', 'cloud hosting'],
   },
+  {
+    url: 'http://ajdev.xyz',
+    codeUrl: 'https://github.com/ajdeleon/streams',
+    imageSource: '/static/streams.png',
+    caption: 'Streams',
+    description:
+      'This is a React/Redux app that allows users to sign in with Google OAuth and stream video using a client like OBS',
+    tags: ['react', 'redux', 'rtmp', 'cloud hosting'],
+  },
 ]
 
 const allTags = projectData.reduce((acc, cur) => {
