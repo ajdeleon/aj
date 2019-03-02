@@ -50,20 +50,16 @@ class Projects extends React.Component {
   render() {
     return (
       <>
-        <GlobalWrapper>
-          <Nav />
-          <main role="main" lang="en">
-            <h1>Projects</h1>
-            <section className="tagPickerContainer">
-              <div className="tagPickerList">
-                {this.renderTagPickerDropdown()}
-              </div>
-            </section>
-            <section className="projectList">
-              {this.renderProjectList()}
-            </section>
-          </main>
-        </GlobalWrapper>
+        <Nav />
+        <main role="main" lang="en">
+          <h1>Projects</h1>
+          <section className="tagPickerContainer">
+            <div className="tagPickerList">
+              {this.renderTagPickerDropdown()}
+            </div>
+          </section>
+          <section className="projectList">{this.renderProjectList()}</section>
+        </main>
 
         <style jsx="true">{`
           main {

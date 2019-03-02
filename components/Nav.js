@@ -47,11 +47,13 @@ export default () => (
       body {
         font-family: arial;
       }
+
       @media only screen and (max-width: 500px) {
         html {
           font-size: 18px;
         }
       }
+
       @media only screen and (min-width: 500px) {
         html {
           font-family: arial;

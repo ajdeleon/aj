@@ -9,10 +9,10 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
       </figcaption>
     </figure>
     <div className="projectInfo">
-      <h2>{caption}</h2>
-      <p>{description}</p>
-      <h3>Technologies</h3>
-      <ul className="tags" role="list">
+      <h2 id="caption">{caption}</h2>
+      <p aria-labelledby="caption">{description}</p>
+      <h3 id="technologyList">Technologies</h3>
+      <ul className="tags" role="list" aria-labelledby="technologyList">
         {tags.map(tag => {
           return (
             <li className="tagItem" key={tag} role="listitem">
@@ -21,38 +21,55 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
           )
         })}
       </ul>
-    </div>
-    <div className="externalLinks">
-      <div>
-        <LinkLogo />{' '}
-        <a className="projectLink" href={url}>
-          Live project link
-        </a>
-      </div>
-      <div>
-        <GithubLogo />{' '}
-        <a className="codeLink" href={codeUrl}>
-          Check out the code here
-        </a>
+      <div className="externalLinks">
+        <div>
+          <LinkLogo />{' '}
+          <a className="projectLink" href={url}>
+            Live project link
+          </a>
+        </div>
+        <div>
+          <GithubLogo />{' '}
+          <a className="codeLink" href={codeUrl}>
+            Check out the code here
+          </a>
+        </div>
       </div>
     </div>
     <style jsx>{`
       article {
         outline: 1px solid #595959;
-        max-width: 20rem;
-        margin: 1rem;
+        margin: 1rem 2rem 1rem 2rem;
         display: flex;
-        flex-direction: column;
       }
 
       figure {
         margin: 0;
-        width: 100%;
+        width: 80%;
+        min-width: 400px;
         text-align: center;
+        outline: 1px solid #595959;
+      }
+
+      @media only screen and (max-width: 800px) {
+        article {
+          flex-direction: column;
+          margin: 1rem 0 1rem 0;
+        }
+
+        figure {
+          align-self: center;
+          width: 100%;
+        }
+
+        .externalLinks {
+          flex-direction: column;
+        }
       }
 
       figcaption {
         font-size: 0.8rem;
+        padding-bottom: 0.5rem;
       }
 
       img {
@@ -60,10 +77,20 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 1px;
-        border-bottom: 1px solid #595959;
+        // border-bottom: 1px solid #595959;
+      }
+
+      #caption {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+      }
+
+      #technologyList {
+        margin-bottom: 0.5rem;
       }
 
       .tags {
+        margin-top: 0;
         color: #595959;
       }
 
@@ -71,25 +98,23 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
       }
 
       .projectInfo {
-        padding: 0 1rem 0rem 1rem;
-        margin-bottom: auto;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        display: flex;
+        flex-direction: column;
       }
 
-      h2 {
-        margin-top: 0.5rem;
-      }
       p {
         color: #595959;
       }
 
       .externalLinks {
+        margin-top: auto;
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
       }
 
       .externalLinks div {
         padding: 0.5rem;
-        border-top: 1px solid #595959;
       }
 
       a {
