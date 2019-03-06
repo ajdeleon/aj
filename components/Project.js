@@ -41,12 +41,13 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
         outline: 1px solid #595959;
         margin: 1rem 2rem 1rem 2rem;
         display: flex;
+        max-width: 1400px;
       }
 
       figure {
         margin: 0;
-        width: 80%;
         min-width: 400px;
+        width: 80%;
         text-align: center;
         outline: 1px solid #595959;
       }
@@ -98,6 +99,7 @@ export default ({ url, codeUrl, imageSource, caption, description, tags }) => (
       }
 
       .projectInfo {
+        width: 80%;
         padding: 0.5rem 2rem 0.5rem 2rem;
         display: flex;
         flex-direction: column;

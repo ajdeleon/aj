@@ -44,6 +44,15 @@ export const projectData = [
       'This is a React/Redux app that allows users to sign in with Google OAuth and stream video using a client like OBS',
     tags: ['react', 'redux', 'rtmp', 'cloud hosting'],
   },
+  {
+    url: 'http://ajdev.xyz',
+    codeUrl: 'https://github.com/ajdeleon/indego_project',
+    imageSource: 'https://via.placeholder.com/250x200.png',
+    caption: 'Indego Bike Map',
+    description:
+      "Inspired by a coding challenge from local Philadelphia company P'unk Ave, this is a full stack project. I used node and mongodb on the backend to pull and store data from the official Indego json endpoint. This data is then piped into a javascript frontend that makes use of the Google Maps API. The individual services (node/express, mongodb, nginx) are linked together using docker-compose.",
+    tags: ['docker', 'javascript', 'mongodb', 'google maps api'],
+  },
 ]
 
 const allTags = projectData.reduce((acc, cur) => {
