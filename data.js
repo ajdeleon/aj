@@ -1,5 +1,14 @@
 export const projectData = [
   {
+    url: 'http://ajdev.xyz',
+    codeUrl: 'https://github.com/ajdeleon/indego_project',
+    imageSource: '/static/indego.png',
+    caption: 'Indego Bike Map',
+    description:
+      "Inspired by a coding challenge from local Philadelphia company P'unk Ave, this is a full stack project. I used node and mongodb on the backend to pull and store data from the official Indego json endpoint. This data is then piped into a javascript frontend that makes use of the Google Maps API. The individual services (node/express, mongodb, nginx) are linked together using docker-compose.",
+    tags: ['docker', 'javascript', 'mongodb', 'google maps api'],
+  },
+  {
     url: 'https://www.showcasephilly.com',
     codeUrl: 'https://github.com/ajdeleon/Free-Code-Camp-Philly-Showcase',
     imageSource: '/static/showcase.png',
@@ -16,15 +25,6 @@ export const projectData = [
     description:
       'The calendar for the theater where I do Improv comedy is notoriously inaccessible and complete unresponsive for mobile. This project uses a node server to collect and parse html data, and then a React frontend renders it in a much more readable way.',
     tags: ['react', 'nodejs', 'docker', 'nginx', 'cloud hosting', 'tachyons'],
-  },
-  {
-    url: 'https://github.com/ajdeleon/gzclp',
-    codeUrl: 'https://github.com/ajdeleon/gzclp',
-    imageSource: 'https://via.placeholder.com/200x250.png',
-    caption: 'gzclp',
-    description:
-      'This is a full stack project to keep track of the somewhat popular workout method gzclp. I chose to user docker-compose because it makes it so easy to orchestrate multiple services',
-    tags: ['react', 'postgresql', 'nodejs', 'docker', 'tachyons'],
   },
   {
     url: 'https://amexcomedy.com',
@@ -45,13 +45,13 @@ export const projectData = [
     tags: ['react', 'redux', 'rtmp', 'cloud hosting'],
   },
   {
-    url: 'http://ajdev.xyz',
-    codeUrl: 'https://github.com/ajdeleon/indego_project',
-    imageSource: 'https://via.placeholder.com/250x200.png',
-    caption: 'Indego Bike Map',
+    url: 'https://github.com/ajdeleon/gzclp',
+    codeUrl: 'https://github.com/ajdeleon/gzclp',
+    imageSource: 'https://via.placeholder.com/200x250.png',
+    caption: 'gzclp',
     description:
-      "Inspired by a coding challenge from local Philadelphia company P'unk Ave, this is a full stack project. I used node and mongodb on the backend to pull and store data from the official Indego json endpoint. This data is then piped into a javascript frontend that makes use of the Google Maps API. The individual services (node/express, mongodb, nginx) are linked together using docker-compose.",
-    tags: ['docker', 'javascript', 'mongodb', 'google maps api'],
+      'This is a full stack project to keep track of the somewhat popular workout method gzclp. I chose to user docker-compose because it makes it so easy to orchestrate multiple services',
+    tags: ['react', 'postgresql', 'nodejs', 'docker', 'tachyons'],
   },
 ]
 
