@@ -3,5 +3,6 @@
   "name": "aj",
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
-  ]
+  ],
+  "alias": "ajdeleon.tech"
 }
